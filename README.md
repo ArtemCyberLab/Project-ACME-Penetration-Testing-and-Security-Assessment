@@ -1,0 +1,13 @@
+I conducted a penetration testing project for ACME to identify vulnerabilities in their system and assess the security level of their web application. The work began with defining the rules of engagement, where I obtained official permission to conduct the test, outlined the testing boundaries—including assessing the security of the web application without affecting the server infrastructure—and established behavioral rules to ensure the system’s functionality was not disrupted.
+
+During the information gathering phase, I leveraged open-source intelligence (OSINT) and discovered that ACME’s HR administrator, Abbey Feltwood, had a public profile on LinkedIn. Her profile included her corporate email address (a.feltwood@acme.co.uk), which could potentially be a target for phishing attacks. This could allow an attacker to compromise her work device and gain access to ACME’s corporate network.
+
+Next, I proceeded to the enumeration and scanning phase. Using the information obtained earlier, I identified the IP address of ACME’s web server (96.37.50.151) and conducted a scan. By executing the command scan 96.37.50.151, I discovered that the web server was vulnerable, while the login service did not present any immediate weaknesses. This finding enabled me to advance to the next phase—exploitation.
+
+During the exploitation phase, I utilized the knowledge gained in the scanning stage to identify and exploit vulnerabilities within ACME’s web application. I launched msf exploit(handler), delivered a payload, and successfully established a Meterpreter session on the target server. This confirmed that I had gained unauthorized access, allowing me to proceed with further exploration of the system.
+
+Once unauthorized access was achieved, the post-exploitation phase began. At this stage, I focused on maintaining access and escalating privileges. I attempted both horizontal and vertical privilege escalation, analyzed what additional information could be extracted from the compromised host, and evaluated the possibility of pivoting to attack other machines within ACME’s network.
+
+The final stage involved reporting and cleanup. I compiled a detailed report outlining the identified vulnerabilities and provided recommendations for mitigation. After submitting the report, the client confirmed that the critical vulnerabilities had been fixed and that the high-privilege user accounts I had created were removed. Lastly, I ensured all traces of my presence were erased by deleting any artifacts created during testing and terminating my Meterpreter sessions.
+
+As a result of this penetration test, several critical security flaws in ACME’s system were identified and addressed, significantly improving the organization’s overall cybersecurity posture.
